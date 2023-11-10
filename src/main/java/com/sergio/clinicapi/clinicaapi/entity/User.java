@@ -53,6 +53,12 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @OneToOne(mappedBy = "user")
+    private EnableAccount enableAccount;
+
+    @OneToOne(mappedBy = "user")
+    private ChangePassword changePassword;
+
     @Embedded //Integrado tem que colocar essa anotação na classe Endereço
     private Address address; //Classe Endereço
 
