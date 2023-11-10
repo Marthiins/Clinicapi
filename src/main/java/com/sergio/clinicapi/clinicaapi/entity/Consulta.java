@@ -1,6 +1,7 @@
 package com.sergio.clinicapi.clinicaapi.entity;
 
 import com.sergio.clinicapi.clinicaapi.enumerated.WorkDayEnum;
+import com.sergio.clinicapi.clinicaapi.util.ConvertingType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -55,5 +56,6 @@ public class Consulta implements Serializable { //  Serializable faz referência
         this.timeEnd = timeEnd;
         this.dentist = dentist;
         this.patient = patient;
+        this.weekDay = ConvertingType.getWeekDayByLocalDate(dataConsulta);
     }
 }
